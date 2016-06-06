@@ -54,6 +54,8 @@
         "theater": "Theater",
         "university": "University",
         "world war ii squad": "World War II Squad",
+        "graveyard": "Graveyard",
+        "missile silo": "Missile silo",
         "roles": {
             "airplane": {
                 "first class passenger": "First Class Passenger",
@@ -306,7 +308,25 @@
                 "cook": "Cook",
                 "imprisoned nazi": "Imprisoned Nazi",
                 "soldier": "Soldier"
-            }   
+            },
+            "graveyard": {
+                "goth kid": "Goth kid",
+                "corpse": "Corpse",
+                "necrophile": "Necrophile",
+                "gravedigger": "Gravedigger",
+                "artist": "Artist",
+                "grieving widow": "Grieving widow",
+                "ghost": "Ghost"
+            },
+            "missile silo": {
+                "incompetent guard 1": "Incompetent guard #1",
+                "incompetent guard 2": "Incompetent guard #2",
+                "un inspector": "UN Inspector",
+                "button presser": "Button presser",
+                "shark keeper": "Shark keeper",
+                "maintenance man": "Maintenance man",
+                "countdown announcer": "Countdown announcer"
+            }
         }
     }
 }

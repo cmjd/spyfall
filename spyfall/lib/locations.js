@@ -334,5 +334,30 @@ locations = [
       'locations.roles.world war ii squad.imprisoned nazi',
       'locations.roles.world war ii squad.soldier'
     ]
+  },
+  {
+    name: 'locations.graveyard',
+    roles: [
+      'locations.roles.graveyard.goth kid',
+      'locations.roles.graveyard.corpse',
+      'locations.roles.graveyard.necrophile',
+      'locations.roles.graveyard.gravedigger',
+      'locations.roles.graveyard.artist',
+      'locations.roles.graveyard.grieving widow',
+      'locations.roles.graveyard.ghost'
+    ]
+  },
+  {
+    name: 'locations.missile silo',
+    roles: [
+      'locations.roles.missile silo.incompetent guard 1',
+      'locations.roles.missile silo.incompetent guard 2',
+      'locations.roles.missile silo.un inspector',
+      'locations.roles.missile silo.button presser',
+      'locations.roles.missile silo.shark keeper',
+      'locations.roles.missile silo.maintenance man',
+      'locations.roles.missile silo.countdown announcer'
+    ]
   }
+
 ];

@@ -32,7 +32,6 @@
     <hr>
 
     <div class="button-container">
-      <button id="btn-new-game">{{_ "ui.new game" }}</button>
       <button id="btn-join-game">{{_ "ui.join game" }}</button>
     </div>
 
@@ -54,31 +53,6 @@
       {{_ "ui.waiting for players" }}
     {{/if}}
   </h4>
-
-  <div class="access-code">
-    {{_ "ui.access code" }}:
-    <span>{{ game.accessCode }}</span>
-  </div>
-
-  <div class="access-buttons">
-    <a class="access-button btn-toggle-qrcode" href="javascript:void(0);">
-      <i class="fa fa-qrcode"></i>
-    </a>
-
-    <span class="access-button-separator"></span>
-
-    <a class="access-button btn-send-access-code-email" href='mailto:?subject={{_ "ui.join my spyfall game" }}&body={{ accessLink }}'>
-      <i class="fa fa-envelope-o"></i>
-    </a>
-  </div>
-
-  <div class="qrcode-container" style="display: none;">
-    <div id="qrcode" class="qrcode"></div>
-
-    <div id="access-link" class="access-link">
-      <a href="{{ accessLink }}">{{ accessLink }}</a>
-    </div>
-  </div>
 
   <hr>
 
@@ -206,7 +180,6 @@
 
   <form id="join-game">  
     <div>
-      <input autocorrect="off" autocapitalize="off" type="text" id="access-code" name="accessCode" placeholder='{{_ "ui.enter an access code" }}'>
       <input type="text" id="player-name" name="playerName" placeholder='{{_ "ui.enter your name" }}'>
 
       {{> flashMessages}}

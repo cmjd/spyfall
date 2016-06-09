@@ -1,10 +1,6 @@
 function cleanUpGamesAndPlayers(){
   var cutOff = moment().subtract(2, 'hours').toDate().getTime();
 
-  var numGamesRemoved = Games.remove({
-    createdAt: {$lt: cutOff}
-  });
-
   var numPlayersRemoved = Players.remove({
     createdAt: {$lt: cutOff}
   });
@@ -47,6 +43,16 @@ function assignRoles(players, location){
 Meteor.startup(function () {
   // Delete all games and players at startup
   Games.remove({});
+  var game = {
+    accessCode: "a",
+    state: "waitingForPlayers",
+    location: null,
+    lengthInMinutes: 8,
+    endTime: null,
+    paused: false,
+    pausedTime: null
+  };
+  Games.insert(game);
   Players.remove({});
 });
 

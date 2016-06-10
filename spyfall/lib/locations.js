@@ -361,3 +361,5 @@ locations = [
   }
 
 ];
+
+usableLocations = _.shuffle(_.clone(locations));

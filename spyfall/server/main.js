@@ -7,24 +7,16 @@ function cleanUpGamesAndPlayers(){
 }
 
 function getRandomLocation(){
-  var locationIndex = Math.floor(Math.random() * locations.length);
-  return locations[locationIndex];
-}
-
-function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-    return array;
+  if (usableLocations.length < 15) {
+    usableLocations = _.shuffle(_.clone(locations));
+  }
+  return usableLocations.pop();
 }
 
 function assignRoles(players, location){
   var default_role = location.roles[location.roles.length - 1];
   var roles = location.roles.slice();
-  var shuffled_roles = shuffleArray(roles);
+  var shuffled_roles = _.shuffle(roles);
   var role = null;
 
   players.forEach(function(player){
@@ -71,6 +63,10 @@ Meteor.publish('players', function(gameID) {
 Games.find({"state": 'settingUp'}).observeChanges({
   added: function (id, game) {
     var location = getRandomLocation();
+
+    console.log("Curr location: " + location.name);
+    console.log(_.map(usableLocations, function(loc) { return loc.name }));
+
     var players = Players.find({gameID: id});
     var gameEndTime = moment().add(game.lengthInMinutes, 'minutes').valueOf();
 
